@@ -2,3 +2,4 @@ prompt_toolkit
 importlib
 distro
 colorama
+requests

@@ -12,6 +12,9 @@ from colorama import Fore
 import shlex
 from settings import get_settings, load_settings, create_settings
 import re
+import requests
+
+version = "3.0"
 
 create_settings()
 
@@ -61,10 +64,19 @@ def get_prompt():
     return FormattedText(result)
 
 def check_update():
-    if settings["SHOW_UPDATE_NOTIFICATION"]:
-        return True
-    else:
-        return False
+    try:
+        url = "https://raw.githubusercontent.com/Melih61/malehTerminal3/refs/heads/main/version.txt"
+        response = requests.get(url)
+        if response.status_code == 200:
+            text = response.text
+            if text.lower().strip() == version:
+                return False
+            else:
+                return True
+        else:
+            return False
+    except:
+        pass
 
 class LastTokenPathCompleter(Completer):
     def __init__(self, **kwargs):
@@ -93,8 +105,9 @@ def main():
 ░█░█░█▀█░█░░░█▀▀░█▀█░░█░░█▀▀░█▀▄░█░█░░█░░█░█░█▀█░█░░░░▀▄
 ░▀░▀░▀░▀░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░▀░▀▀▀░▀▀░
       """ + Fore.RESET)
-    if check_update():
-        print(Fore.RED + "Update available!\nDownload update using\n" + Fore.WHITE + "> " + Fore.RED + "malehterminal update\n" + Fore.RESET)
+    if settings["SHOW_UPDATE_NOTIFICATION"] == "true":
+        if check_update():
+            print(Fore.RED + "Update available!\nDownload update using\n" + Fore.WHITE + "> " + Fore.RED + "malehterminal update\n" + Fore.RESET)
     while True:
         try:
             inp = session.prompt(get_prompt())
