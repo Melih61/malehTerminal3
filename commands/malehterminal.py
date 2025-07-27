@@ -16,7 +16,7 @@ def run(args):
     else:
         if len(args) == 1:
             if args[0].lower() == "update" or args[0].lower() == "-update" or args[0].lower() == "--update":
-                update() if check_update() else print("Es ist momentan kein Update verfügbar")
+                update() if check_update() else print("There is no update available right now")
             elif args[0].lower() == "help" or args[0].lower() == "-help" or args[0].lower() == "--help":
                 print("malehTerminal commands:\n--info: informations about malehTerminal")
                 print("--update: update malehTerminal")
