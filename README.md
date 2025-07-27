@@ -1,10 +1,13 @@
 
 # malehTerminal3
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![Version](https://img.shields.io/badge/version-3.0-blue)]()
 [![Language](https://img.shields.io/badge/language-python-blue)]()
 
-malehTerminal3 is my custom-built terminal, inspired by the classic Bash shell. I've recreated a range of standard commands, allowing users to interact with the system in a familiar way while showcasing the inner workings of a shell environment. Whether you're navigating directories, managing files, or running basic scripts, malehTerminal3 provides a streamlined and educational experience for command-line enthusiasts.
+malehTerminal3 is a custom-built terminal inspired by the functionality and design of Bash. While it doesn't include the full range of Bash commands, it serves as a personal project where I experimented with shell-like features and attempted to replicate core behavior as closely as possible.
 
+## Usage
+Feel free to use, modify, and integrate the code into your own projects. It’s open-source and available for everyone to explore.
 
 ## Installation
 
@@ -34,6 +37,14 @@ OS_COLOR="red"
 DIR_COLOR="cyan"
 SHOW_UPDATE_NOTIFICATION="true"
 ```
+
+## Status
+✅ Up to date. Updated on 27.07.2025
+
+
+## Disclaimer
+This is a learning project created for educational purposes and experimentation. Use at your own risk.
+
 ## Authors
 
 - [@Melih61](https://github.com/Melih61)
