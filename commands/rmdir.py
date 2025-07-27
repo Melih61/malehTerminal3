@@ -2,13 +2,13 @@ import os
 
 def run(args):
     if not args:
-        print("rmdir: Ungültige Argumente")
+        print("rmdir: Invalid arguments")
         return
     for directory in args:
         try:
             os.rmdir(directory)
-            print(f"{directory} wurde erfolgreich gelöscht")
+            print(f"{directory} was deleted")
         except FileNotFoundError:
-            print(f"rmdir: Der Ordner {directory} existiert nicht")
+            print(f"rmdir: No such file or directory: {directory}")
         except Exception as e:
-            print(f"rmdir: Fehler: {e}")
+            print(f"rmdir: Error: {e}")

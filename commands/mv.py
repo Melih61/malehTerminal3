@@ -3,22 +3,22 @@ import shutil
 
 def run(args):
     if not args:
-        print("mv: Ungültige Argumente")
+        print("mv: Invalid arguments")
         return
     try:
         path = args[0]
         destination = args[1]
     except IndexError:
-        print("mv: Nicht genug Argumente")
+        print("mv: Invalid arguments")
         return
     if os.path.exists(path):
         if os.path.exists(destination):
             try:
                 shutil.move(path, destination)
             except IOError:
-                print(f"Die Datei {path} wird grade benutzt")
+                print(f"mv: File or directory {path} is being used")
         else:
-            print(f"Der Path {destination} existiert nicht")
+            print(f"mv: No such file or directory: {destination}")
             return
     else:
-        print(f"Der Path {path} existiert nicht")
+        print(f"mv: No such file or directory: {path}")

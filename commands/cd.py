@@ -7,6 +7,6 @@ def run(args):
         if os.path.exists(args[0]):
             path = args[0]
         else:
-            print("cd: Der angegebene Path existiert nicht")
+            print(f"cd: No such file or directory: {args[0]}")
             return
     os.chdir(path)

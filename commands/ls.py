@@ -14,7 +14,7 @@ def run(args):
         if os.path.exists(args[0]):
             path = args[0]
         else:
-            print("ls: Der angegebene Pfad existiert nicht")
+            print(f"ls: No such file or directory: {args[0]}")
             return
 
     term_width = shutil.get_terminal_size((80, 20)).columns

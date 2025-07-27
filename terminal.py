@@ -15,9 +15,6 @@ import re
 
 create_settings()
 
-commands_list = ["mkdir","rmdir","ls"]
-
-command_completer = WordCompleter(commands_list, ignore_case=True)
 history = InMemoryHistory()
 path_completer = PathCompleter()
 
@@ -97,7 +94,7 @@ def main():
 ░▀░▀░▀░▀░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░▀░▀▀▀░▀▀░
       """ + Fore.RESET)
     if check_update():
-        print(Fore.RED + "Update verfügbar!\nLade Update herunter mit folgendem Befehl\n" + Fore.WHITE + "> " + Fore.RED + "malehterminal update\n" + Fore.RESET)
+        print(Fore.RED + "Update available!\nDownload update using\n" + Fore.WHITE + "> " + Fore.RED + "malehterminal update\n" + Fore.RESET)
     while True:
         try:
             inp = session.prompt(get_prompt())
@@ -120,9 +117,8 @@ def main():
             module.run(args)
         except ModuleNotFoundError:
             os.system(inp)
-            #print(f"malehTerminal: {cmd}: Befehl nicht gefunden")
         except Exception as e:
-            print(f"Fehler beim ausführen von '{cmd}': {e}")
+            print(f"An error occured while executing '{cmd}': {e}")
 
 if __name__ == "__main__":
     main()
