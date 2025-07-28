@@ -9,6 +9,9 @@ malehTerminal3 is a custom-built terminal inspired by the functionality and desi
 ## Usage
 Feel free to use, modify, and integrate the code into your own projects. It’s open-source and available for everyone to explore.
 
+## Website
+[malehTerminal Website](https://malehterminal-website.netlify.app)
+
 ## Installation
 
 Install malehTerminal using git and python
