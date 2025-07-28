@@ -13,6 +13,7 @@ import shlex
 from settings import get_settings, load_settings, create_settings
 import re
 import requests
+import subprocess
 
 version = "3.0"
 
@@ -129,7 +130,10 @@ def main():
             module = importlib.import_module(f"commands.{cmd}")
             module.run(args)
         except ModuleNotFoundError:
-            os.system(inp)
+            try:
+                subprocess.run(inp)
+            except:
+                print(f"{cmd}: command not found")
         except Exception as e:
             print(f"An error occured while executing '{cmd}': {e}")
 
