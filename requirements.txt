@@ -3,3 +3,4 @@ importlib
 distro
 colorama
 requests
+wget
